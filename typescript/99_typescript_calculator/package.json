@@ -1,0 +1,48 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build ./src/index.html",
+    "start": "parcel ./src/index.html",
+    "test": "nyc mocha -r ts-node/register tests/**/*.test.ts"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "dist/",
+      "tests/",
+      "src/index.ts"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "sourceMap": false,
+    "all": true
+  },
+  "author": "Mark Wilkins",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.1",
+    "@types/chai": "^4.3.9",
+    "@types/mocha": "^10.0.3",
+    "@types/sinon": "^10.0.20",
+    "chai": "^4.3.10",
+    "eslint": "^8.52.0",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "parcel": "^2.10.1",
+    "sinon": "^17.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "normalize-scss": "^7.0.1"
+  }
+}
